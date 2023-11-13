@@ -16,6 +16,7 @@ public class OutputView {
     public static final String TOTAL_DISCOUNT_AMOUNT_MESSAGE_FORMAT = "\n<총혜택 금액>\n%s원\n";
     public static final String PAYMENT_AMOUNT_MESSAGE_FORMAT = "\n<할인 후 예상 결제 금액>\n%s원\n";
     public static final String EVENT_BADGE_MESSAGE_FORMAT = "\n<12월 이벤트 배지>\n%s\n";
+    public static final String ORDER_MENU_BODY = "%s %d개\n";
 
 
     private final NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.KOREA);
@@ -37,6 +38,8 @@ public class OutputView {
 
     private void printOrderMenu(Map<String, Integer> userOrders) {
         System.out.println(ORDER_MENU_HEADER);
+        userOrders.forEach(
+                (menuName, quantity) -> System.out.printf(ORDER_MENU_BODY, menuName, quantity));
     }
 
     private void printTotalOrderAmount(int totalOrderAmount) {
