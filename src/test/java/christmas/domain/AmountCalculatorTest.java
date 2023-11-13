@@ -29,4 +29,10 @@ class AmountCalculatorTest {
         assertThat(amountCalculator.giftEvent()).isEqualTo("샴페인 1개");
     }
 
+    @Test
+    @DisplayName("할인금액이 20000원 이상일때 산타뱃지 증정 테스트")
+    void firstEventBadgeTest() {
+        assertThat(amountCalculator.getTotalDiscountAmount()).isGreaterThanOrEqualTo(20000);
+        assertThat(amountCalculator.badgeEvent()).isEqualTo("산타");
+    }
 }
