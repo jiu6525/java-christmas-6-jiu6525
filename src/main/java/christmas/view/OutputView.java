@@ -3,6 +3,7 @@ package christmas.view;
 import christmas.domain.AmountCalculator;
 import christmas.domain.Order;
 import java.text.NumberFormat;
+import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Map;
 
@@ -67,16 +68,16 @@ public class OutputView {
         if (message.length() == 0) {
             message.append(OutputConstants.NO_DISCOUNT_MESSAGE);
         }
-        System.out.println(message);
+        System.out.print(message);
     }
 
     private static Map<String, Integer> discountAmountBoard(AmountCalculator amountCalculator) {
-        return Map.of(
-                OutputConstants.CHRISTMAS_DISCOUNT_LABEL, amountCalculator.amount().mainEventDiscountAmount(),
-                OutputConstants.WEEKDAY_DISCOUNT_LABEL, amountCalculator.amount().dateDiscountAmount(),
-                OutputConstants.SPECIAL_DATE_DISCOUNT_LABEL, amountCalculator.amount().specialDateDiscountAmount(),
-                OutputConstants.GIFT_EVENT_LABEL, amountCalculator.getGiftDiscountAmount()
-        );
+        Map<String, Integer> board = new LinkedHashMap<>();
+        board.put(OutputConstants.CHRISTMAS_DISCOUNT_LABEL, amountCalculator.amount().mainEventDiscountAmount());
+        board.put(OutputConstants.WEEKDAY_DISCOUNT_LABEL, amountCalculator.amount().dateDiscountAmount());
+        board.put(OutputConstants.SPECIAL_DATE_DISCOUNT_LABEL, amountCalculator.amount().specialDateDiscountAmount());
+        board.put(OutputConstants.GIFT_EVENT_LABEL, amountCalculator.getGiftDiscountAmount());
+        return board;
     }
 
     private void appendDiscount(StringBuilder message, String discountName, int discountAmount) {
