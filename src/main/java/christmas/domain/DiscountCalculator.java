@@ -40,7 +40,13 @@ public class DiscountCalculator {
         return DEFAULT_AMOUNT;
     }
 
-    private int dateDiscountCalculate(int visitDate, MenuType type, Integer value) {
+    private int dateDiscountCalculate(int visitDate, MenuType menuType, Integer quantity) {
         return 0;
     }
+
+    public boolean isWeekly(int day) {
+        return day % DateConfig.WEEK == DateConfig.WEEKLY_DISCOUNT_START_DATE
+                || day % DateConfig.WEEK == DateConfig.WEEKLY_DISCOUNT_END_DATE;
+    }
+
 }
