@@ -26,4 +26,10 @@ class DiscountCalculatorTest {
     void mainEventDiscountTest() {
         assertThat(discountCalculator.mainEventDiscountCalculate(25)).isEqualTo(3400);
     }
+
+    @Test
+    @DisplayName("특별할인(달력에 별) 할인금액 테스트")
+    void specialDateDiscountTest() {
+        assertThat(discountCalculator.specialDateDiscountCalculate(3)).isEqualTo(1000);
+    }
 }
