@@ -1,6 +1,7 @@
 package christmas.domain;
 
 import static christmas.config.DiscountConfig.DEFAULT_AMOUNT;
+import static christmas.config.DiscountConfig.MINIMUM_PURCHASE_AMOUNT_FOR_DISCOUNT_EVENT;
 
 import christmas.config.DateConfig;
 import christmas.config.DiscountConfig;
@@ -17,6 +18,13 @@ public class DiscountCalculator {
             Menu menu = Menu.valueOf(entry.getKey());
             totalOrderAmount += menu.getPrice() * entry.getValue();
             dateDiscountAmount += dateDiscountCalculate(visitDate, menu.getType(), entry.getValue());
+        }
+        return minimumDiscountAmountCheck(visitDate, dateDiscountAmount, totalOrderAmount);
+    }
+
+    private Amount minimumDiscountAmountCheck(int visitDate, int dateDiscountAmount, int totalOrderAmount) {
+        if (totalOrderAmount <= MINIMUM_PURCHASE_AMOUNT_FOR_DISCOUNT_EVENT) {
+            return new Amount(DEFAULT_AMOUNT, DEFAULT_AMOUNT, DEFAULT_AMOUNT, totalOrderAmount);
         }
         return new Amount(mainEventDiscountCalculate(visitDate),
                 dateDiscountAmount,
