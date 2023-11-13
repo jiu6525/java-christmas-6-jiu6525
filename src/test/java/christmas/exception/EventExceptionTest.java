@@ -45,6 +45,16 @@ class EventExceptionTest extends NsTest {
         });
     }
 
+    @Test
+    @DisplayName("비정상적인 메뉴입력 예외 테스트")
+    void orderMenuContainsCheckTest() {
+        assertSimpleTest(() -> {
+            runException("3", "우테코-1");
+            assertThat(output()).contains("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+        });
+    }
+
+
     @Override
     protected void runMain() {
         Application.main(new String[]{});
