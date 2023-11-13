@@ -29,4 +29,11 @@ public record AmountCalculator(Amount amount) {
                 .orElse(EventBadges.NONE)
                 .getBadgeMessage();
     }
+
+    public String giftEvent() {
+        if (amount.totalOrderAmount() >= Prize.PRODUCT.getMinProductPrice()) {
+            return Prize.PRODUCT.getPrizeName();
+        }
+        return Prize.NONE.getPrizeName();
+    }
 }
