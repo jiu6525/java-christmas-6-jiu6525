@@ -9,6 +9,11 @@ import java.util.Arrays;
 
 public class TotalOrderException {
 
+    public void totalOrderCheck(String[] orders) {
+        orderMenuDuplicateCheckMain(orders);
+        orderMenuQuantityCheckMain(orders);
+        orderOnlyDrinkCheckMain(orders);
+    }
 
     private void orderMenuDuplicateCheckMain(String[] orders) {
         if (!orderDuplicateCheckSub(orders)) {
