@@ -35,4 +35,14 @@ class AmountCalculatorTest {
         assertThat(amountCalculator.getTotalDiscountAmount()).isGreaterThanOrEqualTo(20000);
         assertThat(amountCalculator.badgeEvent()).isEqualTo("산타");
     }
+
+    @Test
+    @DisplayName("할인금액이 10000원 이상일때 트리뱃지 증정 테스트")
+    void secondEventBadgeTest() {
+        Order order = new Order(new String[]{"티본스테이크-1", "초코케이크-4"});
+        AmountCalculator amountCalculator = new AmountCalculator(discountCalculator.calculateDiscountRate(order, 3));
+        System.out.println(amountCalculator.getTotalDiscountAmount());
+        assertThat(amountCalculator.getTotalDiscountAmount()).isGreaterThanOrEqualTo(10000);
+        assertThat(amountCalculator.badgeEvent()).isEqualTo("트리");
+    }
 }
