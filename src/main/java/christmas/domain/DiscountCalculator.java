@@ -41,7 +41,13 @@ public class DiscountCalculator {
     }
 
     private int dateDiscountCalculate(int visitDate, MenuType menuType, Integer quantity) {
-        return 0;
+        if (isWeekly(visitDate) && menuType == MenuType.MAIN) {
+            return DiscountConfig.WEEKLY_DISCOUNT_AMOUNT * quantity;
+        }
+        if (!isWeekly(visitDate) && menuType == MenuType.DESSERT) {
+            return DiscountConfig.WEEKLY_DISCOUNT_AMOUNT * quantity;
+        }
+        return DEFAULT_AMOUNT;
     }
 
     public boolean isWeekly(int day) {
