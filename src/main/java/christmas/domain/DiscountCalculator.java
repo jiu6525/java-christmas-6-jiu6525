@@ -12,23 +12,23 @@ public class DiscountCalculator {
         for (Entry<String, Integer> entry : userOrders.getUserOrders().entrySet()) {
             Menu menu = Menu.valueOf(entry.getKey());
             totalOrderAmount += menu.getPrice() * entry.getValue();
-            dateDiscountAmount += calculateDiscountByDate(visitDate, menu.getType(), entry.getValue());
+            dateDiscountAmount += dateDiscountCalculate(visitDate, menu.getType(), entry.getValue());
         }
-        return new Amount(calculateMainEventDiscount(visitDate),
+        return new Amount(mainEventDiscountCalculate(visitDate),
                 dateDiscountAmount,
-                calculateSpecialDateDiscount(visitDate),
+                specialDateDiscountCalculate(visitDate),
                 totalOrderAmount);
     }
 
-    private int calculateSpecialDateDiscount(int visitDate) {
+    private int specialDateDiscountCalculate(int visitDate) {
         return 0;
     }
 
-    private int calculateMainEventDiscount(int visitDate) {
+    private int mainEventDiscountCalculate(int visitDate) {
         return 0;
     }
 
-    private int calculateDiscountByDate(int visitDate, MenuType type, Integer value) {
+    private int dateDiscountCalculate(int visitDate, MenuType type, Integer value) {
         return 0;
     }
 }
