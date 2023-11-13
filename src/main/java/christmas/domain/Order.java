@@ -27,4 +27,7 @@ public class Order {
                 .forEach(menuAndQuantity -> addItem(menuAndQuantity[0], Integer.parseInt(menuAndQuantity[1])));
     }
 
+    public int calculateOrderQuantity() {
+        return userOrders.values().stream().mapToInt(Integer::intValue).sum();
+    }
 }
