@@ -36,6 +36,15 @@ class EventExceptionTest extends NsTest {
         });
     }
 
+    @Test
+    @DisplayName("비정상적인 입력형식 예외 테스트")
+    void orderFormatCheckMainTest() {
+        assertSimpleTest(() -> {
+            runException("3", "티본스테이크--");
+            assertThat(output()).contains("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+        });
+    }
+
     @Override
     protected void runMain() {
         Application.main(new String[]{});
