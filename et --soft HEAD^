@@ -1,0 +1,221 @@
+[33mcommit ccb4fc068ed69de474d252f9e602f2ad94cecdcd[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 21:17:31 2023 +0900
+
+    feat : 입력받은 할인금액을 이벤트 처리하기 위한 AmountCalculator 기능 구현
+
+[33mcommit 66b012a6d43399790152cd2eb03ad9313859fd63[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 21:15:23 2023 +0900
+
+    feat : 금액을 보관할 Amount 레코드 생성
+
+[33mcommit 367f623d0e80aa6dace47b7ca5cf8841e9b94925[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 21:14:19 2023 +0900
+
+    docs : README 기능 추가
+
+[33mcommit c86caab5b89cd7d7f9c9b492231855e15d0dd973[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:50:50 2023 +0900
+
+    test : 음료만 있을경우 예외 테스트 추가
+
+[33mcommit 9af2b415cebb07878d400088a4c62c6030b2863a[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:50:12 2023 +0900
+
+    test : 사용자 정상 메뉴 입력 확인 테스트 추가
+
+[33mcommit 88669f651798e2f39665afec4bd57b3d1c529049[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:49:26 2023 +0900
+
+    test : 사용자 입력 형식 테스트 추가
+
+[33mcommit 0802142c540c1f78503cdeec3d56a5789e6dd9a2[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:48:41 2023 +0900
+
+    docs : README 내용 추가
+
+[33mcommit afb8926b34680701ad23051f56606410fd9e69b8[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:45:54 2023 +0900
+
+    test : 중복메뉴 예외 테스트 추가
+
+[33mcommit 9e225f6b9911d246e42e63625e0c7a09042cd2c7[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:44:48 2023 +0900
+
+    test : 주문개수 20개 이내 테스트 작성
+
+[33mcommit 79c7707b50e37a5801c8a4e7b9845c9271d2a0eb[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:43:17 2023 +0900
+
+    feat : 전체 주문에 대한 예외처리 적용
+
+[33mcommit 770200a7fcd64d7144af208ff0fd53cd5a5b33e0[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:40:08 2023 +0900
+
+    feat : 주문이 음료로만 이뤄졌을경우 예외발생 메서드 추가
+
+[33mcommit 6817c6e96872ed01c0bb853c32115edccdec585f[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:39:14 2023 +0900
+
+    feat : 주문 수량이 20개 이하 확인하는 메서드 추가
+
+[33mcommit 522ed30d1c028c4c110f8928aa9cb56a78abc7b4[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:38:14 2023 +0900
+
+    feat : 주문한 메뉴의 총 개수를 구하는 메서드 추가
+
+[33mcommit 7eaca1c764e123a759a057421e08f26b50d85287[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:36:06 2023 +0900
+
+    feat : 메뉴 중복 확인 메서드 구현
+
+[33mcommit 0bd7b34a13ff0f0030602263b03938ca599566a0[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:34:25 2023 +0900
+
+    feat : 메뉴와 할인금액의 정보를 담고있는 DiscountConfig 추가
+
+[33mcommit f083caa1fa8c3d5457b43942d55482aed9e8446f[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:31:27 2023 +0900
+
+    feat : 사용자 메뉴 입력 예외처리 추가
+
+[33mcommit 84b4e19d624c75272a63ec0f9b7d942b8ed33dfc[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:29:29 2023 +0900
+
+    feat : 사용자 정상메뉴 입력 확인 메서드 구현
+
+[33mcommit cbc0b30cee1b8382f3103b95b7768a455a271bd2[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:16:06 2023 +0900
+
+    feat : 사용자의 메뉴 입력 확인 메서드 생성
+
+[33mcommit dbbd58b7c321f49f1e12669e31ea2cd31a15f45a[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:13:34 2023 +0900
+
+    chore : 날짜 예외처리 패키지 생성
+
+[33mcommit 098d11549269fd6ec1736dff5435664921c1abdf[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:10:04 2023 +0900
+
+    feat : 사용자 주문 입력 메서드 작성
+
+[33mcommit c1058b2346eb8ec481446e689d7982a2a7b96894[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:07:56 2023 +0900
+
+    feat : Order 일급 컬렉션 추가
+
+[33mcommit 7a9cdd7b080529632be2e077334e94f4db742d16[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:04:47 2023 +0900
+
+    feat : eventBadge의 정보를 담고있는 enum타입 추가
+
+[33mcommit 35330c1fbf5d7812c6bd3737ee4341f30827982a[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:03:38 2023 +0900
+
+    feat : 증정상품 정보를 담고 있는 Prize enum 타입 추가
+
+[33mcommit 1f5708aa33968668565d4c332d5ca7f7f6e7a14a[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:02:19 2023 +0900
+
+    feat : 메뉴정보를 담고있는 enum 클래스 추가
+
+[33mcommit 8bb08a230291d82ff21d23f99c3cf498e2d53b6a[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 20:00:02 2023 +0900
+
+    test : 사용자 날짜입력 검증 테스트
+
+[33mcommit 3b94a8e45e778b361b173338b2f7c6e43d06933e[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 19:58:43 2023 +0900
+
+    feat : 사용자 날짜 입력 예외처리 적용
+
+[33mcommit 77e2a4e52ecd0f7b22aae017913f27ad05479c12[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 19:54:15 2023 +0900
+
+    feat : 전체 예외처리 클래스 EventException 추가
+
+[33mcommit 6a9407417f9e635942346248688d18def21f4ecc[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 19:52:45 2023 +0900
+
+    feat : 방문날짜 범위 확인 메서드 추가
+
+[33mcommit 6d527c8886a2b1b8aa220a895bb7a4b13782c265[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 19:51:33 2023 +0900
+
+    feat : 날짜 입력 숫자 검증 메서드 추가
+
+[33mcommit 055d6452e50a69b4b121c14d8d63034e5545e290[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 19:49:29 2023 +0900
+
+    docs : README 수정
+
+[33mcommit 1a462e60dc45e124fd68688c726d7285a6f013cb[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 19:45:10 2023 +0900
+
+    feat : 날짜 환경설정 클래스 추가
+
+[33mcommit eb9359931af4cbe4c59423ce39096caf53067880[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 19:43:06 2023 +0900
+
+    docs : README 수정
+
+[33mcommit b7f7c23b11838de01064d5720e06b55ce1b7cccb[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 19:40:41 2023 +0900
+
+    feat : EventController 추가
+
+[33mcommit 465b623cdbec237b8816826dc10e29758ecd0856[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Mon Nov 13 19:37:53 2023 +0900
+
+    feat : 사용자 입력 메서드 구현
+
+[33mcommit c3f95f970493d9180598075648ce9d0d127e10a8[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Sat Nov 11 22:27:35 2023 +0900
+
+    docs : README 파일 내용 추가
+
+[33mcommit b70f2b603eb4cc2db70738d332316edbf23a0fef[m
+Author: jiu6525 <jiu6525@daum.net>
+Date:   Thu Nov 9 17:44:51 2023 +0900
+
+    feat : view 패키지 추가
+
+[33mcommit d1905b6667cf0a9d6614fc37d73f533175c52dcf[m
+Author: jiu <118248199+jiu6525@users.noreply.github.com>
+Date:   Thu Nov 9 17:24:58 2023 +0900
+
+    Initial commit
