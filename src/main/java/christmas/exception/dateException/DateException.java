@@ -1,4 +1,4 @@
-package christmas.exception;
+package christmas.exception.dateException;
 
 import christmas.config.DateConfig;
 
