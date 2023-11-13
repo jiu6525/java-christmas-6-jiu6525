@@ -54,6 +54,14 @@ class EventExceptionTest extends NsTest {
         });
     }
 
+    @Test
+    @DisplayName("음료만 주문했을때 예외 테스트")
+    void orderOnlyDrinkCheckMainTest() {
+        assertSimpleTest(() -> {
+            runException("3", "제로콜라-1");
+            assertThat(output()).contains("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+        });
+    }
 
     @Override
     protected void runMain() {
