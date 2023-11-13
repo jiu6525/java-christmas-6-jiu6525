@@ -21,4 +21,12 @@ class AmountCalculatorTest {
         int payment = amountCalculator.getPayment();
         assertThat(totalOrderAmount - date - mainEvent - specialDate).isEqualTo(payment);
     }
+
+    @Test
+    @DisplayName("할인전 주문금액이 120000원 이상일때 샴페인 증정 테스트")
+    void giftEventTest() {
+        assertThat(amountCalculator.amount().totalOrderAmount()).isGreaterThanOrEqualTo(120000);
+        assertThat(amountCalculator.giftEvent()).isEqualTo("샴페인 1개");
+    }
+
 }
