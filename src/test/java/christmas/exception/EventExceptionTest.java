@@ -27,6 +27,15 @@ class EventExceptionTest extends NsTest {
         });
     }
 
+    @Test
+    @DisplayName("중복메뉴 예외 테스트")
+    void orderMenuDuplicateCheckTest() {
+        assertSimpleTest(() -> {
+            runException("3", "티본스테이크-1,티본스테이크-1");
+            assertThat(output()).contains("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+        });
+    }
+
     @Override
     protected void runMain() {
         Application.main(new String[]{});
