@@ -16,6 +16,11 @@ public class OutputView {
     public static final String TOTAL_DISCOUNT_AMOUNT_MESSAGE_FORMAT = "\n<총혜택 금액>\n%s원\n";
     public static final String PAYMENT_AMOUNT_MESSAGE_FORMAT = "\n<할인 후 예상 결제 금액>\n%s원\n";
     public static final String EVENT_BADGE_MESSAGE_FORMAT = "\n<12월 이벤트 배지>\n%s\n";
+    public static final String CHRISTMAS_DISCOUNT_LABEL = "크리스마스 디데이 할인";
+    public static final String WEEKDAY_DISCOUNT_LABEL = "평일 할인";
+    public static final String SPECIAL_DATE_DISCOUNT_LABEL = "특별 할인";
+    public static final String GIFT_EVENT_LABEL = "증정 이벤트";
+    public static final String NO_DISCOUNT_MESSAGE = "없음";
     public static final String ORDER_MENU_BODY = "%s %d개\n";
 
 
@@ -53,6 +58,7 @@ public class OutputView {
 
     private void printDiscountDetails(AmountCalculator amountCalculator) {
         System.out.println(DISCOUNT_DETAILS_HEADER);
+        displayDiscountDetails(amountCalculator);
     }
 
     private void printTotalDiscountAmount(int totalDiscountAmount) {
@@ -66,5 +72,31 @@ public class OutputView {
 
     private void printEventBadge(String badgeEvent) {
         System.out.printf(EVENT_BADGE_MESSAGE_FORMAT, badgeEvent);
+    }
+
+    private void displayDiscountDetails(AmountCalculator amountCalculator) {
+        StringBuilder message = new StringBuilder();
+        Map<String, Integer> board = discountAmountBoard(amountCalculator);
+        board.forEach((label, amount) -> appendDiscount(message, label, amount));
+
+        if (message.length() == 0) {
+            message.append(NO_DISCOUNT_MESSAGE);
+        }
+        System.out.println(message);
+    }
+
+    private static Map<String, Integer> discountAmountBoard(AmountCalculator amountCalculator) {
+        return Map.of(
+                CHRISTMAS_DISCOUNT_LABEL, amountCalculator.amount().mainEventDiscountAmount(),
+                WEEKDAY_DISCOUNT_LABEL, amountCalculator.amount().dateDiscountAmount(),
+                SPECIAL_DATE_DISCOUNT_LABEL, amountCalculator.amount().specialDateDiscountAmount(),
+                GIFT_EVENT_LABEL, amountCalculator.getGiftDiscountAmount()
+        );
+    }
+
+    private void appendDiscount(StringBuilder message, String discountName, int discountAmount) {
+        if (discountAmount > 0) {
+            message.append(discountName).append(": ").append(numberFormat.format(-discountAmount)).append("\n");
+        }
     }
 }
