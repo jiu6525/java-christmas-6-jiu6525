@@ -32,15 +32,7 @@ public class DiscountCalculator {
                 totalOrderAmount);
     }
 
-    private int specialDateDiscountCalculate(int visitDate) {
-        if (visitDate % DateConfig.WEEK == DateConfig.SPECIAL_DISCOUNT_DATE
-                || visitDate == DateConfig.MAIN_EVENT_DATE) {
-            return DiscountConfig.DEFAULT_DISCOUNT_AMOUNT;
-        }
-        return DEFAULT_AMOUNT;
-    }
-
-    private int mainEventDiscountCalculate(int visitDate) {
+    public int mainEventDiscountCalculate(int visitDate) {
         if (visitDate <= DateConfig.MAIN_EVENT_DATE) {
             return DiscountConfig.DEFAULT_DISCOUNT_AMOUNT
                     + (visitDate - 1) * DiscountConfig.MAIN_EVENT_DISCOUNT_RATE;
@@ -48,7 +40,15 @@ public class DiscountCalculator {
         return DEFAULT_AMOUNT;
     }
 
-    private int dateDiscountCalculate(int visitDate, MenuType menuType, Integer quantity) {
+    public int specialDateDiscountCalculate(int visitDate) {
+        if (visitDate % DateConfig.WEEK == DateConfig.SPECIAL_DISCOUNT_DATE
+                || visitDate == DateConfig.MAIN_EVENT_DATE) {
+            return DiscountConfig.DEFAULT_DISCOUNT_AMOUNT;
+        }
+        return DEFAULT_AMOUNT;
+    }
+
+    public int dateDiscountCalculate(int visitDate, MenuType menuType, Integer quantity) {
         if (isWeekly(visitDate) && menuType == MenuType.MAIN) {
             return DiscountConfig.WEEKLY_DISCOUNT_AMOUNT * quantity;
         }

@@ -21,4 +21,9 @@ class DiscountCalculatorTest {
         assertThat(discountCalculator.isWeekly(3)).isFalse();
     }
 
+    @Test
+    @DisplayName("메인이벤트(크리스마스 디데이 할인) 최대할인금액 테스트")
+    void mainEventDiscountTest() {
+        assertThat(discountCalculator.mainEventDiscountCalculate(25)).isEqualTo(3400);
+    }
 }
