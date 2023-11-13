@@ -33,7 +33,11 @@ public class DiscountCalculator {
     }
 
     private int mainEventDiscountCalculate(int visitDate) {
-        return 0;
+        if (visitDate <= DateConfig.MAIN_EVENT_DATE) {
+            return DiscountConfig.DEFAULT_DISCOUNT_AMOUNT
+                    + (visitDate - 1) * DiscountConfig.MAIN_EVENT_DISCOUNT_RATE;
+        }
+        return DEFAULT_AMOUNT;
     }
 
     private int dateDiscountCalculate(int visitDate, MenuType type, Integer value) {
