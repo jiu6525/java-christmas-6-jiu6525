@@ -32,4 +32,14 @@ class DiscountCalculatorTest {
     void specialDateDiscountTest() {
         assertThat(discountCalculator.specialDateDiscountCalculate(3)).isEqualTo(1000);
     }
+
+    @Test
+    @DisplayName("최소 할인 적용금액 테스트")
+    void minimumDiscountAmountCheckTest() {
+        int visitDate = 3;
+        Order order = new Order(new String[]{"아이스크림-1", "제로콜라-1"});
+        AmountCalculator amountCalculator = new AmountCalculator(
+                discountCalculator.calculateDiscountRate(order, visitDate));
+        assertThat(amountCalculator.getPayment()).isEqualTo(amountCalculator.amount().totalOrderAmount());
+    }
 }
