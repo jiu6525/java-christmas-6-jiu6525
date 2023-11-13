@@ -27,7 +27,7 @@ public class InputView {
         do {
             System.out.println(ORDER_INSTRUCTION);
             userOrders = Console.readLine().split(",");
-        } while (false);
+        } while (!eventException.ordersCheckMain(userOrders));
         return new Order(userOrders);
     }
 }
