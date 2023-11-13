@@ -22,6 +22,26 @@ class DiscountCalculatorTest {
     }
 
     @Test
+    @DisplayName("주말 할인 테스트")
+    void WeekendDiscountAmountCheckTest() {
+        int visitDate = 1;
+        Order order = new Order(new String[]{"티본스테이크-2", "초코케이크-3", "제로콜라-1"});
+        AmountCalculator amountCalculator = new AmountCalculator(
+                discountCalculator.calculateDiscountRate(order, visitDate));
+        assertThat(amountCalculator.amount().dateDiscountAmount()).isEqualTo(4046);
+    }
+
+    @Test
+    @DisplayName("평일 할인 테스트")
+    void WeekdayDiscountAmountCheckTest() {
+        int visitDate = 3;
+        Order order = new Order(new String[]{"티본스테이크-2", "초코케이크-3", "제로콜라-1"});
+        AmountCalculator amountCalculator = new AmountCalculator(
+                discountCalculator.calculateDiscountRate(order, visitDate));
+        assertThat(amountCalculator.amount().dateDiscountAmount()).isEqualTo(6069);
+    }
+
+    @Test
     @DisplayName("메인이벤트(크리스마스 디데이 할인) 최대할인금액 테스트")
     void mainEventDiscountTest() {
         assertThat(discountCalculator.mainEventDiscountCalculate(25)).isEqualTo(3400);
