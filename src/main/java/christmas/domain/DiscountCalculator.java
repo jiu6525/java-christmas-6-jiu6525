@@ -1,5 +1,9 @@
 package christmas.domain;
 
+import static christmas.config.DiscountConfig.DEFAULT_AMOUNT;
+
+import christmas.config.DateConfig;
+import christmas.config.DiscountConfig;
 import christmas.enums.Menu;
 import christmas.enums.Menu.MenuType;
 import java.util.Map.Entry;
@@ -21,7 +25,11 @@ public class DiscountCalculator {
     }
 
     private int specialDateDiscountCalculate(int visitDate) {
-        return 0;
+        if (visitDate % DateConfig.WEEK == DateConfig.SPECIAL_DISCOUNT_DATE
+                || visitDate == DateConfig.MAIN_EVENT_DATE) {
+            return DiscountConfig.DEFAULT_DISCOUNT_AMOUNT;
+        }
+        return DEFAULT_AMOUNT;
     }
 
     private int mainEventDiscountCalculate(int visitDate) {
