@@ -1,0 +1,24 @@
+package christmas.domain;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+class DiscountCalculatorTest {
+
+    DiscountCalculator discountCalculator = new DiscountCalculator();
+
+    @Test
+    @DisplayName("23.12.01(금) 요일 주말 확인 테스트")
+    void isWeekendTest() {
+        assertThat(discountCalculator.isWeekly(1)).isTrue();
+    }
+
+    @Test
+    @DisplayName("23.12.03(일) 요일 평일 확인 테스트")
+    void isWeekdayTest() {
+        assertThat(discountCalculator.isWeekly(3)).isFalse();
+    }
+
+}
