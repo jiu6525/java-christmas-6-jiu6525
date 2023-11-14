@@ -3,8 +3,8 @@ package christmas.exception.orderException;
 import static christmas.config.DiscountConfig.MAXIMUM_ORDER_QUANTITY;
 
 import christmas.domain.Order;
-import christmas.enums.Menu;
-import christmas.enums.Menu.MenuType;
+import christmas.domain.enums.Menu;
+import christmas.domain.enums.Menu.MenuType;
 import java.util.Arrays;
 
 public class TotalOrderException {

@@ -1,4 +1,4 @@
-package christmas.enums;
+package christmas.domain.enums;
 
 public enum Prize {
 

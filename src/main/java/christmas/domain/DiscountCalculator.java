@@ -5,8 +5,8 @@ import static christmas.config.DiscountConfig.MINIMUM_PURCHASE_AMOUNT_FOR_DISCOU
 
 import christmas.config.DateConfig;
 import christmas.config.DiscountConfig;
-import christmas.enums.Menu;
-import christmas.enums.Menu.MenuType;
+import christmas.domain.enums.Menu;
+import christmas.domain.enums.Menu.MenuType;
 import java.util.Map.Entry;
 
 public class DiscountCalculator {

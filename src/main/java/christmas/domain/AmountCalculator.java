@@ -1,7 +1,7 @@
 package christmas.domain;
 
-import christmas.enums.EventBadges;
-import christmas.enums.Prize;
+import christmas.domain.enums.EventBadges;
+import christmas.domain.enums.Prize;
 import java.util.Arrays;
 
 public record AmountCalculator(Amount amount) {

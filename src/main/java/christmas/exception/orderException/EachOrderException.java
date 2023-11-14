@@ -1,6 +1,6 @@
 package christmas.exception.orderException;
 
-import christmas.enums.Menu;
+import christmas.domain.enums.Menu;
 import java.util.Arrays;
 
 public class EachOrderException {
